@@ -3,29 +3,6 @@
 const inputDOM = document.querySelector("#task");
 const listDOM = document.querySelector("#list");
 
-
-
-
-// -----------
-
-// -----------
-
-
-
-
-
-
-// -----------
-
-// ----------- (Start)
-
-
-
-
-
-
-// ----------- (End)
-
 // ----------- Add Element (Start)
 
 function newElement() {
@@ -33,8 +10,7 @@ function newElement() {
         $('.success').toast('show');
         let LiDOM = document.createElement('li');
         listDOM.appendChild(LiDOM);
-        
-        LiDOM.innerHTML= `${inputDOM.value} <span onclick="deleteElement(event)" style='display: flex; justify-content: right; margin-top: -30px;'><i class="material-icons">&#xe888;</i></span>`;
+        LiDOM.innerHTML= `<span onclick="line(event)">${inputDOM.value}</span> <span style='display: flex; justify-content: right; margin-top: -30px;'><i onclick="deleteElement(event)" class="material-icons">&#xe888;</i></span>`;
         inputDOM.value = "";
         console.log("Eklendi.");
     } else {
@@ -58,18 +34,22 @@ function deleteElement(event) {
 
 // ----------- Delete Element (End)
 
-// -----------
+// ----------- Change Background (Start)
 
 
 function line(event) { 
-    var x = event.target;
-    var y = x.parentElement;
-    y.parentElement.remove();
+    var a = event.target;
+    if(a.parentElement.style.backgroundColor != "yellow"){
+    a.parentElement.style.backgroundColor = "yellow";
+    console.log("renk sarı")}
+    else{
+      a.parentElement.style.backgroundColor = null;
+    };
+    console.log(event);
+   
   };
 
-
-
-// -----------
+// ----------- Change Background (End)
 
 // ----------- Click on Enter (Start)
 
