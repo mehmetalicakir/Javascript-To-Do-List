@@ -33,23 +33,26 @@ function newElement() {
         $('.success').toast('show');
         let LiDOM = document.createElement('li');
         listDOM.appendChild(LiDOM);
-        LiDOM.innerHTML= `${inputDOM.value} <i class="material-icons" style='display: flex; justify-content: right; margin-top: -30px;'>&#xe888;</i>`;
+        
+        LiDOM.innerHTML= `${inputDOM.value} <span onclick="deleteElement(event)" style='display: flex; justify-content: right; margin-top: -30px;'><i class="material-icons">&#xe888;</i></span>`;
         inputDOM.value = "";
         console.log("Eklendi.");
     } else {
         $('.error').toast('show');
     }
     
-}
+};
 
 // ----------- Add Element (End)
 
 // ----------- Delete Element (Start)
 
-function deleteElement(del) {
-    listDOM.removeChild(listDOM.childNodes[del]);
-}
 
+function deleteElement(event) { 
+    var x = event.target;
+    var y = x.parentElement;
+    y.parentElement.remove();
+  };
 
 
 
@@ -58,18 +61,24 @@ function deleteElement(del) {
 // -----------
 
 
-
-
-
-
-// -----------
-
-// -----------
-
-
-
+function line(event) { 
+    var x = event.target;
+    var y = x.parentElement;
+    y.parentElement.remove();
+  };
 
 
 
 // -----------
+
+// ----------- Click on Enter (Start)
+
+inputDOM.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+     event.preventDefault();
+     document.getElementById("liveToastBtn").click();
+    }
+  });
+
+// ----------- Click on Enter (End)
 
