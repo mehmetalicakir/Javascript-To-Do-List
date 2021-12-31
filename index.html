@@ -11,6 +11,7 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Yapılacaklar Listesi</title>
   </head>
   <body>
@@ -77,11 +78,11 @@
       </div>
 
       <ul id="list">
-        <li>3 Litre Su İç</li>
-        <li>Ödevleri Yap</li>
-        <li>En Az 3 Saat Kodlama Yap</li>
-        <li>Yemek Yap</li>
-        <li>50 Sayfa Kitap Oku</li>
+        <li>3 Litre Su İç <span onclick="deleteElement(this.index())" style='display: flex; justify-content: right; margin-top: -30px;'><i class="material-icons">&#xe888;</i></span></li> 
+        <li>Ödevleri Yap <span style='display: flex; justify-content: right; margin-top: -30px;'><i class="material-icons">&#xe888;</i></span></li>     
+        <li>En Az 3 Saat Kodlama Yap <span style='display: flex; justify-content: right; margin-top: -30px;'><i class="material-icons">&#xe888;</i></span></li>
+        <li>Yemek Yap <span style='display: flex; justify-content: right; margin-top: -30px;'><i class="material-icons">&#xe888;</i></span></li>
+        <li>50 Sayfa Kitap Oku <span style='display: flex; justify-content: right; margin-top: -30px;'><i class="material-icons">&#xe888;</i></span></li>
       </ul>
       <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -94,6 +95,7 @@
         crossorigin="anonymous"
       ></script>
       <script src="index.js"></script>
+      
     </div>
   </body>
 </html>
