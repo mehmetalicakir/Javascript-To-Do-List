@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Yapılacaklar Listesi</title>
+    <title>To Do List</title>
   </head>
   <body>
     <div class="mr-1" style="position: relative">
@@ -35,7 +35,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="toast-body">Listeye eklendi.</div>
+          <div class="toast-body">Added to the list.</div>
         </div>
       </div>
     </div>
@@ -59,30 +59,22 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="toast-body">Listeye boş ekleme yapamazsınız!</div>
+          <div class="toast-body">You can't add blanks to the list!</div>
         </div>
       </div>
     </div>
     <div class="container">
       <div class="header">
-        <img
-          src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png"
-          class="mb-1"
-          alt=""
-        />
-        <h2>Yapılacaklar Listesi</h2>
-        <input type="text" id="task" placeholder="Bugün ne yapacaksın?" />
+        
+        
+        <h2>To Do List | Kodluyoruz</h2>
+        <input type="text" id="task" placeholder="What will you do today?" />
         <span onclick="newElement()" id="liveToastBtn" class="button"
-          >Ekle</span
+          >Add</span
         >
       </div>
 
       <ul id="list">
-        <li> <span onclick="line(event)">3 Litre Su İç</span> <span style='display: flex; justify-content: right; margin-top: -30px;'><i onclick="deleteElement(event)" class="material-icons">&#xe888;</i></span></li> 
-        <li> <span onclick="line(event)">Ödevleri Yap</span> <span style='display: flex; justify-content: right; margin-top: -30px;'><i onclick="deleteElement(event)" class="material-icons">&#xe888;</i></span></li>     
-        <li> <span onclick="line(event)">En Az 3 Saat Kodlama Yap</span> <span style='display: flex; justify-content: right; margin-top: -30px;'><i onclick="deleteElement(event)" class="material-icons">&#xe888;</i></span></li>
-        <li> <span onclick="line(event)">Yemek Yap</span> <span style='display: flex; justify-content: right; margin-top: -30px;'><i onclick="deleteElement(event)" class="material-icons">&#xe888;</i></span></li>
-        <li> <span onclick="line(event)">50 Sayfa Kitap Oku</span> <span style='display: flex; justify-content: right; margin-top: -30px;'><i onclick="deleteElement(event)" class="material-icons">&#xe888;</i></span></li>
       </ul>
       <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

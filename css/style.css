@@ -63,7 +63,11 @@
   }
   
   .header {
-    background-color: #f78501;
+    /* background-color: #f78501; */
+    background-image: url("../images/banner.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
     padding: 30px 40px;
     color: white;
     text-align: center;
