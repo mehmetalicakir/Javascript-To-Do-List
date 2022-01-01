@@ -49,6 +49,10 @@ function deleteElement(event) {
     var x = event.target;
     var y = x.parentElement;
     y.parentElement.remove();
+    RemoveItemLS(y.parentElement.childNodes[0].firstChild.data);
+    // console.log(x);
+    // console.log(y);
+    // console.log(y.parentElement.childNodes[0].firstChild.data);
   };
 
 
@@ -97,11 +101,13 @@ if (window.localStorage.getItem('localStorageIndex')) {
 
 for (let index = 0; index < localStorageIndex; index++) {
   
-  let LiDOM = document.createElement('li');
+  if (window.localStorage.getItem(`task${index}`)) {
+    let LiDOM = document.createElement('li');
   listDOM.appendChild(LiDOM);
   let liDOMvalue = window.localStorage.getItem(`task${index}`)
   LiDOM.innerHTML= `<span onclick="line(event)">${liDOMvalue}</span> <span style='display: flex; justify-content: right; margin-top: -30px;'><i onclick="deleteElement(event)" class="material-icons">&#xe888;</i></span>`;
    
+  }
 }
 
 // ----------- Read Local Storage (End)
@@ -122,7 +128,15 @@ function AddItemLS(value) {
 
 // Delete from Local Storage (Start)
 
-function RemoveItemLS() {
+function RemoveItemLS(data) {
+
+  for (i = 0; i < localStorage.length; i++) {
+    if (window.localStorage.getItem(localStorage.key(i))==data) {
+      
+      localStorage.removeItem(localStorage.key(i));
+    }
+  }
+
 
 }
 
